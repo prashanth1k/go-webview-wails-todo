@@ -3,17 +3,18 @@
         <div v-for="todo in todos.data" :key="todo">
             <div class="todo-item row">
                 <div class="col-1">
-                    <input type="checkbox" name="status" id="status" :value="todo.status == 'Complete' ? true : false"
+                    <input type="checkbox" name="status" id="status" :checked="todo.status == 'Complete' ? true : false"
                         @click="updateTodo(todo)">
                 </div>
-                <div class="col-2 dates">
-                    <img src="https://icongr.am/feather/calendar.svg?size=14&color=D3D3D3" alt=""> {{ todo.due }}
+                <div class="col-3 dates">
+                    <img src="https://icongr.am/feather/calendar.svg?size=14&color=D3D3D3" alt=""> {{
+                        todo.due?.substring(0, 10) }}
                 </div>
-                <div class="col-8">
+                <div class="col-7">
                     {{ todo.description }}
                 </div>
                 <div class="col-1">
-                    <a class="button error cardaction " @click="deleteTodo"><img
+                    <a class="button error cardaction " @click="deleteTodo(todo)"><img
                             src="https://icongr.am/feather/trash-2.svg?size=24&color=FFFFFF"></a>
                 </div>
             </div>
@@ -23,7 +24,7 @@
 
 <script setup>
 const props = defineProps(['todos'])
-import { UpdateTodo } from '../../wailsjs/go/main/App'
+import { UpdateTodo, DeleteTodo } from '../../wailsjs/go/main/App'
 const emit = defineEmits(['updateTodo', 'deleteTodo'])
 
 const updateTodo = async (todo) => {

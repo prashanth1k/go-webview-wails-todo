@@ -29,7 +29,9 @@ const todo = reactive({ description: "", created: "", due: "", status: "" });
 const addTodo = async () => {
     console.log(`Emitting addTodo event..!`)
     todo.status = "In Progress"
-    todo.created = new Date().toISOString().substring(0, 16).replace("T", " ")
+    todo.created = new Date().toISOString()
+    todo.due = new Date(todo.due).toISOString()
+
     const todoResponse = await CreateTodo(todo)
     console.log('todoResponse: ', todoResponse);
     emit('addTodo', { ...todo })

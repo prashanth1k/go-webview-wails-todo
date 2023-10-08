@@ -23,7 +23,7 @@ onMounted(() => {
   <div class="container">
     <nav class="nav">
       <div class="nav-left">
-        <a class="brand" href="#">Wails Todos!</a>
+        <a class="brand" href="#">⚡Wails Todos!</a>
       </div>
     </nav>
 
