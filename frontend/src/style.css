@@ -1,0 +1,37 @@
+#app {
+  height: 100vh;
+  text-align: center;
+}
+.todo-item {
+  margin-top: 1em;
+}
+
+.headersummary {
+  text-align: right;
+  color: grey;
+  font-size: 0.8em;
+}
+
+.todolist {
+  text-align: left;
+}
+
+.todocard {
+  margin-top: 2em;
+}
+
+label {
+  color: lightgray;
+  font-size: 0.8em;
+  float: left;
+  font-weight: bold;
+}
+
+.cardaction {
+  align-self: end;
+  text-align: right;
+}
+
+.dates {
+  color: grey;
+}
